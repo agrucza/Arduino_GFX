@@ -54,9 +54,12 @@
     extern "C" int Cache_WriteBack_Addr(uint32_t addr, uint32_t size);
 #endif
 
-
-//#if (!defined(ESP_ARDUINO_VERSION_MAJOR)) || (ESP_ARDUINO_VERSION_MAJOR < 3)
-#if (!defined(ESP_ARDUINO_VERSION_MAJOR)) || (ESP_ARDUINO_VERSION_MAJOR >5)
+/*
+ * Adjusted for PlatformIO usage, and the Waveshare ESP32-S3-Touch-AMOLED-2.06 dev kit.
+ * There is no v5 of the arduino-esp32 library by espressif, not sure if this works for pre v2 versions.
+ */
+#if (!defined(ESP_ARDUINO_VERSION_MAJOR)) || (ESP_ARDUINO_VERSION_MAJOR >= 2)
+//#if (!defined(ESP_ARDUINO_VERSION_MAJOR)) || (ESP_ARDUINO_VERSION_MAJOR >5)
 #include "esp_lcd_panel_io.h"
 #include "esp_lcd_panel_vendor.h"
 #include "esp_lcd_panel_interface.h"
