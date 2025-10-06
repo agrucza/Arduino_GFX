@@ -18,8 +18,10 @@
 #ifndef CONFIG_IDF_TARGET_ESP32C5
 #include "hal/clk_gate_ll.h"
 #endif
+#if defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 3)
 #include "esp32-hal-periman.h"
 #include "esp_private/periph_ctrl.h"
+#endif
 
 #include "esp_system.h"
 #include "esp_intr_alloc.h"
